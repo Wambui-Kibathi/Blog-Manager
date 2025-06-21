@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "We Need More Black Artists In Alternative Rock",
+      "content": "Alternative rock is a genre of music that is very niche in the white community but a lot of underground black artists are venturing to that genre. Ravyn Lenae is one such artist.",
+      "author": "Wambui Kibathi",
+      "avatar": "https://i.pinimg.com/736x/3b/58/7d/3b587de413ad83e4881e9ba8aefacc07.jpg",
+      "date": "2025-05-20"
+    },
+    {
+      "id": "2",
+      "title": "A Journey Through Code",
+      "content": "Exploring the vast world of programming one line at a time",
+      "author": "Octavio Spencer",
+      "avatar": "https://i.pinimg.com/736x/b5/87/5f/b5875f7a22cc9506459b6e787b6064c1.jpg",
+      "date": "2025-04-2"
+    },
+    {
+      "id": "3",
+      "title": "Exploring the Hidden Gems of Nairobi National Park",
+      "content": "Did you know that Nairobi is the only capital city in the world with a national park? Only in Africa!",
+      "author": "Miller Franc",
+      "avatar": "https://i.pinimg.com/736x/3b/ff/47/3bff479bf524105cc422419f4e2aee70.jpg",
+      "date": "2024-04-8"
+    }
+  ]
+}
