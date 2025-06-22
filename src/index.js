@@ -74,7 +74,7 @@ function displayPosts() {
                 console.log('No posts found. Displaying "Nothing Selected" message.');
                 postDetailDiv.innerHTML = `
                     <h2 class="post-detail-title">Nothing Selected</h2>
-                    <div class="post-meta">
+                    <div class="post-info">
                         <span class="post-author"></span>
                         <span class="post-date"></span>
                     </div>
@@ -101,7 +101,7 @@ function handlePostClick(postId) {
 
     postDetailDiv.innerHTML = `
         <h2 class="post-detail-title">Loading...</h2>
-        <div class="post-meta"></div>
+        <div class="post-info"></div>
         <div class="post-detail-image-container"></div>
         <p class="post-content">Fetching post details...</p>
         <div class="post-actions">
@@ -132,7 +132,7 @@ function handlePostClick(postId) {
 
             postDetailDiv.innerHTML = `
                 <h2 class="post-detail-title">${post.title}</h2>
-                <div class="post-meta">
+                <div class="post-info">
                     <span class="post-author">By ${post.author}</span>
                     <span class="post-date">• ${post.date}</span>
                 </div>

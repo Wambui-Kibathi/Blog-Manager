@@ -138,13 +138,13 @@ body {
     margin-bottom: 10px;
 }
 
-.post-meta {
+.post-info {
     font-size: 0.95em;
     color: #7f8c8d;
     margin-bottom: 20px;
 }
 
-.post-meta .post-author {
+.post-info .post-author {
     font-weight: 600;
 }
 
