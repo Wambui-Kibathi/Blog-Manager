@@ -1,7 +1,5 @@
-// Base URL for your API, pointing to the 'posts' endpoint
 const baseUrl = 'http://localhost:3000/posts';
 
-// --- DOM Elements ---
 const postListUl = document.getElementById('post-list');
 const postCountSpan = document.getElementById('post-count');
 const postDetailDiv = document.getElementById('post-detail');
@@ -15,7 +13,6 @@ const cancelEditBtn = document.getElementById('cancel-edit');
 
 let currentPostId = null;
 
-// --- Helper Function: createPostListItem ---
 function createPostListItem(post) {
     console.log('Creating list item for post:', post.title);
     const listItem = document.createElement('li');
@@ -40,16 +37,11 @@ function createPostListItem(post) {
     return listItem;
 }
 
-// --- Core Functions ---
-
-/**
- * Fetches all posts from the API and displays them.
- */
 function displayPosts() {
     console.log('Attempting to display all posts...');
     postListUl.innerHTML = '<li class="loading-message">Loading posts...</li>';
 
-    fetch(baseUrl) // GET request
+    fetch(baseUrl) 
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -175,7 +167,7 @@ function handlePostClick(postId) {
 
 function addNewPostListener() {
     console.log('New post form listener initialized.');
-    newPostForm.addEventListener('submit', (event) => { // No 'async' here now
+    newPostForm.addEventListener('submit', (event) => { 
         event.preventDefault();
         console.log('New post form submitted.');
 
@@ -194,7 +186,7 @@ function addNewPostListener() {
         };
         console.log('New post data to be sent:', newPost);
 
-        fetch(baseUrl, { // POST request
+        fetch(baseUrl, { 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -221,8 +213,6 @@ function addNewPostListener() {
     });
 }
 
-// --- Advanced Functions (Edit and Delete) ---
-
 function showEditForm(post) {
     console.log('Showing edit form for post:', post.id);
     editPostCard.classList.remove('hidden');
@@ -232,10 +222,7 @@ function showEditForm(post) {
     console.log('Edit form pre-filled with data for post ID:', currentPostId);
 }
 
-/**
- * Handles the submission of the edit post form.
- */
-editPostForm.addEventListener('submit', (event) => { // No 'async' here now
+editPostForm.addEventListener('submit', (event) => { 
     event.preventDefault();
     console.log('Edit post form submitted for post ID:', currentPostId);
 
@@ -248,7 +235,7 @@ editPostForm.addEventListener('submit', (event) => { // No 'async' here now
     };
     console.log('Updated post data to be sent:', updatedPostData);
 
-    fetch(`${baseUrl}/${currentPostId}`, { // PATCH request
+    fetch(`${baseUrl}/${currentPostId}`, { 
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
@@ -275,23 +262,20 @@ editPostForm.addEventListener('submit', (event) => { // No 'async' here now
     });
 });
 
-/**
- * Handles clicking the cancel button on the edit form.
- */
 cancelEditBtn.addEventListener('click', () => {
     console.log('Edit form cancel button clicked.');
     editPostCard.classList.add('hidden');
     editPostForm.reset();
 });
 
-function deletePost(postId) { // No 'async' here now
+function deletePost(postId) { 
     console.log('Attempting to delete post ID:', postId);
     if (!confirm('Are you sure you want to delete this post? This cannot be undone.')) {
         console.log('Delete operation cancelled by user.');
         return;
     }
 
-    fetch(`${baseUrl}/${postId}`, { // DELETE request
+    fetch(`${baseUrl}/${postId}`, { 
         method: 'DELETE',
     })
     .then(response => {
@@ -312,8 +296,6 @@ function deletePost(postId) { // No 'async' here now
         alert('Failed to delete post. Please try again.');
     });
 }
-
-// --- Initializing the Application ---
 
 function main() {
     console.log('Application main function started.');
