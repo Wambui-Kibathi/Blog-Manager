@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3001/posts';
+const baseUrl = 'http://localhost:3000/posts';
 
 const postListUl = document.getElementById('post-list');
 const postCountSpan = document.getElementById('post-count');
